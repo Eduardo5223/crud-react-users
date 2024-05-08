@@ -8,7 +8,7 @@ const CreateUser = () => {
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
     const [user, setUser] = useState({
-        nombre: "",
+        name: "",
         email: "",
         password: ""
     })
@@ -35,7 +35,7 @@ const CreateUser = () => {
 
             if (response.ok) {
                 console.log('Form submitted successfully!');
-                setUser({nombre: "",email: "",password: ""})
+                setUser({name: "",email: "",password: ""})
                 navigate('/show-user');
             } else {
                 console.error('Form submission failed!');
@@ -57,8 +57,8 @@ const CreateUser = () => {
             </div>
             <form onSubmit={handelSubmit}>
                 <div className="mb-3">
-                    <label for="nombre" className="form-label">Nombre</label>
-                    <input type="text" className="form-control" id="nombre" name="nombre" value={user.name} onChange={handelInput} />
+                    <label for="name" className="form-label">name</label>
+                    <input type="text" className="form-control" id="name" name="name" value={user.name} onChange={handelInput} />
                 </div>
                 <div className="mb-3 mt-3">
                     <label for="email" className="form-label">Email</label>
